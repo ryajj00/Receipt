@@ -1,0 +1,199 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding-top: 50px;
+    color: #333;
+
+    /* Add radial gradient background */
+    background: radial-gradient(ellipse at center, #007bff, #ff69b4, #fff);
+    background-size: 200% 200%; /* Adjust size for animation */
+    animation: gradient 15s ease infinite; /* Animation properties */
+    min-height: 100vh; /* Ensure the background covers the entire viewport */
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+/*--- Other styles --- */
+
+nav {
+    background-color: transparent;  /* Make navigation transparent */
+    padding: 10px 20px;  /* Add padding */
+    border-bottom: none;  /* Remove the border */
+
+    position: absolute; /* Fix position at top */
+    top: 0;
+    right: 0; /* Changed from left: 0; */
+    width: auto; /* Changed from width: 100%; */
+    display: flex;
+    justify-content: flex-end; /* Align items to the right */
+    align-items: center; /* Center content vertically */
+    box-sizing: border-box; /* Include padding in width calculation */
+    z-index: 10;  /* Ensure navigation is above other content */
+}
+
+footer {
+    background-color: transparent; /* Transparent Background */
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+/* --- Navigation Links Group --- */
+.nav-links {
+    display: flex; /* Arrange links horizontally */
+}
+
+.nav-links a {
+    color: #333;
+    text-decoration: none;
+    padding: 5px 10px;
+    margin: 0 5px;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+.logout-button {
+    background-color: #1DB954;  /* Spotify Green */
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    /* margin-left: 20px; Push to the right */
+    cursor: pointer;
+    border-radius: 5px; /* Rounded corners */
+}
+
+/* --- Main Content Area --- */
+/* --- Main Content Area --- */
+/* --- Main Content Area --- */
+.container {
+    display: flex;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: transparent; /* Removed opacity for the gradient */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);  /* Subtle shadow */
+}
+.receipt-section h2{
+  color: black; /*set header to black */
+}
+#receiptText {
+    font-family: monospace;
+    white-space: pre-wrap;
+    font-size: 14px;
+    line-height: 1.4;
+    color:black; /*change color of the text */
+}
+
+#receiptImage {
+    max-width: 100%; /* Make the image responsive */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Remove extra space below the image */
+    margin: 10px auto; /* Center horizontally with margin on top and bottom*/
+
+}
+
+.customize-section h2 {
+    margin-top: 0;
+    color:black; /*change color of the text */
+}
+.form-group label{
+  color:black; /*change color of the text */
+}
+.receipt-explained{
+   color:black; /*change color of the text */
+}
+
+.download-buttons {
+    margin-top: 20px;
+}
+
+.download-buttons button {
+    background-color: #1DB954; /* Spotify Green */
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.download-buttons button:hover {
+    opacity: 0.8;
+}
+
+/* --- Customize Section --- */
+.customize-section {
+    width: 70%;
+    padding: 10px;
+}
+
+.customize-section h2 {
+    margin-top: 0;
+}
+
+.form-group {
+    margin-bottom: 10px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+select, .button-group {
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    box-sizing: border-box;  /* Prevents padding from affecting width */
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-around;
+}
+
+.button-group button {
+    flex: 1;  /* Equally sized buttons */
+    background-color: transparent;
+    border: 1px solid black;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 0 2px; /* Add spacing */
+    color:black;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Add transition */
+}
+
+.button-group button:hover {
+    background-color: rgba(0, 0, 0, 0.2); /* Darken on hover */
+    color:white; /* Ensure text remains white on hover */
+}
+
+.button-group button.active {
+    background-color: black;
+    color: white;
+    border: none;
+}
+
+/* --- Receipt Explained Section --- */
+.receipt-explained {
+    margin-top: 20px;
+}
+

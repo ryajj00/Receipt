@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receiptify - Home</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <nav>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <button onclick="logout()" class="logout-button">Log Out</button>
+    </nav>
+    <div class="container">
+        <section class="receipt-section">
+            <h2>Receiptify</h2>
+    
+            <!-- Canvas for drawing the receipt -->
+            <canvas id="receiptCanvas" width="300" height="500"></canvas>
+    
+            <!-- ADD ALL the changes Here -->
+    
+        <div class="download-buttons">
+            <button id="downloadButton">Download Image</button>
+            <button>View in New Tab</button>
+            <button>Save as Playlist</button>
+        </div>
+    </section>
+
+        <section class="customize-section">
+            <h2>Customize Receipt</h2>
+
+            <div class="form-group">
+                <label for="metric">Metric</label>
+                <select id="metric">
+                    <option value="topTracks">Top Tracks</option>
+                    <option value="topArtists">Top Artists</option>
+                    <option value="topGenres">Top Genres</option>
+                    <option value="stats">Stats</option>
+                    <option value="searchAlbums">Search Albums</option>
+                    <option value="buildCustomReceipt">Build Custom Receipt</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Time Period</label>
+                <div class="button-group" id="time-period">
+                    <button class="active">Last Month</button>
+                    <button>Last 6 Months</button>
+                    <button>Last Year</button>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Mode</label>
+                <div class="button-group" id="mode">
+                    <button class="active">Normal</button>
+                    <button>Brat Edition</button>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Length</label>
+                <div class="button-group" id="length">
+                    <button class="active">Top 10</button>
+                    <button>Top 50</button>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Font</label>
+                <div class="button-group" id="font">
+                    <button>Classic</button>
+                    <button>Internationally Compatible</button>
+                </div>
+            </div>
+
+            <section class="receipt-explained">
+                <h3>Receipt Explained</h3>
+                <p>QTY - The ranking of a track in your most played. The higher up on the list, the more played it is.</p>
+                <p>AMT - The length of a song</p>
+            </section>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
