@@ -4,24 +4,6 @@ body {
     margin: 0;
     padding-top: 50px;
     color: #333;
-
-    /* Add radial gradient background */
-    background: radial-gradient(ellipse at center, #007bff, #ff69b4, #fff);
-    background-size: 200% 200%; /* Adjust size for animation */
-    animation: gradient 15s ease infinite; /* Animation properties */
-    min-height: 100vh; /* Ensure the background covers the entire viewport */
-}
-
-@keyframes gradient {
-    0% {
-        background-position: 0% 0%;
-    }
-    50% {
-        background-position: 100% 100%;
-    }
-    100% {
-        background-position: 0% 0%;
-    }
 }
 
 /*--- Other styles --- */
@@ -57,7 +39,7 @@ footer {
 }
 
 .nav-links a {
-    color: #333;
+    color: #fffefe;
     text-decoration: none;
     padding: 5px 10px;
     margin: 0 5px;
@@ -71,7 +53,7 @@ footer {
     background-color: #1DB954;  /* Spotify Green */
     color: white;
     border: none;
-    padding: 5px 10px;
+    padding: 6px 15px;
     /* margin-left: 20px; Push to the right */
     cursor: pointer;
     border-radius: 5px; /* Rounded corners */
@@ -89,14 +71,14 @@ footer {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);  /* Subtle shadow */
 }
 .receipt-section h2{
-  color: black; /*set header to black */
+  color: rgb(255, 255, 255); /*set header to black */
 }
 #receiptText {
     font-family: monospace;
     white-space: pre-wrap;
     font-size: 14px;
     line-height: 1.4;
-    color:black; /*change color of the text */
+    color:rgb(255, 255, 255); /*change color of the text */
 }
 
 #receiptImage {
@@ -109,13 +91,13 @@ footer {
 
 .customize-section h2 {
     margin-top: 0;
-    color:black; /*change color of the text */
+    color:rgb(255, 255, 255); /*change color of the text */
 }
 .form-group label{
-  color:black; /*change color of the text */
+  color:rgb(255, 255, 255); /*change color of the text */
 }
 .receipt-explained{
-   color:black; /*change color of the text */
+   color:rgb(255, 255, 255); /*change color of the text */
 }
 
 .download-buttons {

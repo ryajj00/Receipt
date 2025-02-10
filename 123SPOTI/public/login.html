@@ -3,97 +3,127 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spotify Login</title>
+    <title>Your Personalized Spotify Receipts</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
-            padding-top: 50px;
-            color: #333;
-
-            /* Add radial gradient background */
-            background: radial-gradient(ellipse at center, #007bff, #ff69b4, #fff); /* Centered gradient */
-            background-size: 200% 200%; /* Adjust size for animation */
-            animation: gradient 15s ease infinite; /* Animation properties */
-            min-height: 100vh; /* Ensure the background covers the entire viewport */
-
+            padding: 0;
+            color: #ffffff;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            overflow: hidden; /* Prevent scrollbars */
         }
 
-        @keyframes gradient {
+        @keyframes glow {
             0% {
-                background-position: 0% 0%;
-            }
-            50% {
-                background-position: 100% 100%;
+                text-shadow: 0 0 5px #007bff, 0 0 10px #007bff, 0 0 20px #007bff, 0 0 40px #007bff, 0 0 80px #007bff;
             }
             100% {
-                background-position: 0% 0%;
+                text-shadow: 0 0 10px #ff69b4, 0 0 20px #ff69b4, 0 0 40px #ff69b4, 0 0 80px #ff69b4, 0 0 160px #ff69b4;
             }
         }
 
-    .neon-container {
-  text-align: center;
-}
+        .neon-container {
+            text-align: center;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1; /* Ensure it is above the background */
+        }
 
-.neon-text {
-    font-size: 4rem; /* Makes title to have a better read */
-    color: #fff;
-    text-shadow: 0 0 5px #007bff, 0 0 10px #007bff, 0 0 20px #007bff, 0 0 40px #007bff, 0 0 80px #007bff;
-    animation: glow 1.5s infinite alternate;
-  
-}
+        .neon-text {
+            font-size: 4rem;
+            color: #fff;
+            text-shadow: 0 0 5px #007bff, 0 0 10px #007bff, 0 0 20px #007bff, 0 0 40px #007bff, 0 0 80px #007bff;
+            animation: glow 1.5s infinite alternate;
+        }
 
-@keyframes glow {
-    0% {
-        text-shadow: 0 0 5px #007bff, 0 0 10px #007bff, 0 0 20px #007bff, 0 0 40px #007bff, 0 0 80px #007bff;
-    }
-    100% {
-        text-shadow: 0 0 10px #ff69b4, 0 0 20px #ff69b4, 0 0 40px #ff69b4, 0 0 80px #ff69b4, 0 0 160px #ff69b4;
-    }
-}
-        /* --- Footer CSS--- */
+        .main-text {
+            font-size: 9rem;
+            color: transparent;
+            -webkit-text-stroke: 2px #ffffff;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: -2; /* Ensure it is behind the neon text */
+        }
+
+        .login-container {
+            text-align: center;
+            margin-top: 80px;
+            position: relative;
+            z-index: 0; /* Ensure it is above the background */
+        }
+
+        .login-button {
+            background-color: transparent;
+            color: white;
+            padding: 10px 20px;
+            border: 2px solid white; /* Makes Border to be visible */
+            border-radius: 2px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease, border-radius 0.3s ease, color 0.3s ease;  /* Change to darken less, and ensure it stays transparent */
+        }
+
+        .login-button:hover {
+            background-color: rgba(34, 209, 48, 0.959);
+            transition: background-color 0.3s ease, border-radius 0.3s ease, color 0.3s ease;  /* Change to darken less, and ensure it stays transparent */
+            border-radius: 24px;
+            color: rgb(0, 0, 0);
+        }
+
         footer {
-        position: absolute; /* Transparent Background */
-        color: black;        /* Ensure it is visible */
-        padding: 10px 0;
-        bottom: 0;
-        left: 0;  /* set them to the bottom for proper look */
-        width: 100%;
-        text-align: center; /* Center footer text */
-         background: transparent; /* transparent Footer */
-    }
+            position: absolute; /* Transparent Background */
+            color: black;        /* Ensure it is visible */
+            padding: 10px 0;
+            bottom: 0;
+            left: 0;  /* set them to the bottom for proper look */
+            width: 100%;
+            text-align: center; /* Center footer text */
+            background: transparent; /* transparent Footer */
+            z-index: 1; /* Ensure it is above the background */
+        }
 
-    .login-button {
-        background-color: transparent;
-        color: white;
-        padding: 10px 20px;
-        border: 2px solid white; /* Makes Border to be visible */
-        border-radius: 5px;
-        cursor: pointer;
-        font-size: 16px;
-        transition: opacity 0.3s ease;
-    }
+        .background-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0; /* Ensure it is behind other content */
+        }
 
-    .login-button:hover {
-        background-color: rgba(0, 0, 0, 0.1);  /* Change to darken less, and ensure it stays transparent */
-    }
+        spline-viewer {
+            width: 100%;
+            height: 100%;
+        }
     </style>
 </head>
 <body>
 
-    <div class="neon-container">
-        <h1 class="neon-text">Kantasibo📀📀📀</h1>
+    <div class="background-container">
+        <!-- Embed the new 3D content as background -->
+        <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.63/build/spline-viewer.js"></script>
+<spline-viewer url="https://prod.spline.design/5ybGdwoMjda7uNJw/scene.splinecode"></spline-viewer>
     </div>
+
+    <div class="neon-container">
+        <h1 class="neon-text">Lingang</h1>
+        <h1 class="main-text">guli</h1>
+    </div>
+
     <div class="login-container">
-        <h1>Login to Spotify</h1>
         <button class="login-button" id="loginBtn">Login with Spotify</button>
     </div>
 
-    <footer> <p> &copy; 2025 Receiptify. All rights reserved.</p></footer>
+    <footer>
+        <p>&copy; 2025 Receiptify. All rights reserved.</p>
+    </footer>
 
     <script>
         const clientId = 'fc0b6630837144ecae9a0bf845ed2c0d'; // Replace with your client ID
@@ -157,6 +187,7 @@
                 console.error('Access token not found in URL');
             }
         }
+        
     </script>
 </body>
 </html>
